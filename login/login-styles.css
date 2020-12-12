@@ -95,6 +95,14 @@ p.forgetmenot label {
 	font-weight: 600;
 	font-size: 14px;
 	text-transform: uppercase;
+	letter-spacing: 1px;
+	width: 100%;
+	display: block;
+	float: left;
+	margin-top: 16px;
+	padding: 8px 32px;
+	border: none;
+	border-radius: 3px;
 }
 
 .wp-core-ui .button.button-large:hover,
@@ -113,4 +121,5 @@ p.forgetmenot label {
 .login #backtoblog a:hover,
 .login #nav a:hover {
 	color: #fff;
+	text-decoration: underline;
 }
