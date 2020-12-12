@@ -1,0 +1,80 @@
+// Media Query Mixins
+//--------------------------------------------//
+
+// Check for hover capabilities
+// @include hover-setup() {}
+
+@mixin hover-setup() {
+	@media (hover: hover) {
+		@content;
+	}
+}
+
+// @include on-hover {}
+@mixin on-hover() {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+// Add CSS specific to iOS devices - like iPad
+// @include ios-device {}
+
+@mixin ios-device {
+	@supports (-webkit-touch-callout: none) {
+		@content;
+	}
+}
+
+/* ----------------------------------------------------------------------------
+ * Responsive
+ * Usage
+		@include r(ipad-pro) { }
+		@include r(sm) { }
+		@include r(md) { }
+		@include r(lg) { }
+		@include r(xl) { }
+    @include r(hover) { }
+ * ------------------------------------------------------------------------- */
+
+@mixin r($device) {
+	@if $device == "ipad-pro" {
+		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+
+		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+			@content;
+		}
+
+		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+			@content;
+		}
+	}
+}
+
+@mixin r($size) {
+	@if $size == "sm" {
+		@media screen and (max-width: 480px) {
+			@content;
+		}
+	} @else if $size == "md" {
+		@media screen and (max-width: 768px) {
+			@content;
+		}
+	} @else if $size == "lg" {
+		@media screen and (max-width: 991px) {
+			@content;
+		}
+	} @else if $size == "xl" {
+		@media screen and (max-width: 1200px) {
+			@content;
+		}
+	} @else if $size == hover {
+		@media (hover: none) {
+			@content;
+		}
+	}
+}

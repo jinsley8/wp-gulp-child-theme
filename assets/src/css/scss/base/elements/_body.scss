@@ -1,0 +1,7 @@
+// Elements - Body
+//--------------------------------------------//
+
+body {
+	overscroll-behavior: none;
+	background: $background-1-colour; // Fallback for when there is no custom background color defined.
+}

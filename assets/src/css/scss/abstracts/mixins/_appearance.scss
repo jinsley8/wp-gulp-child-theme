@@ -1,0 +1,56 @@
+// Appearance & Style Mixins
+//--------------------------------------------//
+
+// Appearance
+@mixin appearance($value) {
+	-webkit-appearance: $value;
+	-moz-appearance: $value;
+	appearance: $value;
+}
+
+// Box shadow
+// @include box-shadow(1px 1px 1px rgba(0,0,0,0.15));
+
+@mixin box-shadow($value) {
+	-webkit-box-shadow: $value;
+	-moz-box-shadow: $value;
+	box-shadow: $value;
+}
+
+// Set every border radius
+// @include border-radius(5px);
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Placeholder
+@mixin placeholder {
+	::-webkit-input-placeholder {
+		@content;
+	}
+
+	:-moz-placeholder {
+		@content;
+	}
+
+	::-moz-placeholder {
+		@content;
+	}
+
+	:-ms-input-placeholder {
+		@content;
+	}
+}
+
+// Cross browser opacity
+// @include opacity(0.8);
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}

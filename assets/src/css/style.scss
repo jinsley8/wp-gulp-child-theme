@@ -1,0 +1,51 @@
+// Import variables and theme info.
+@import "scss/abstracts/variables/theme";
+@import "scss/theme/theme_info";
+
+// Import variables and mixins.
+@import "scss/abstracts/mixins/fonts";
+@import "scss/abstracts/mixins/appearance";
+@import "scss/abstracts/mixins/position";
+@import "scss/abstracts/mixins/media-queries";
+@import "scss/abstracts/functions";
+@import "scss/abstracts/variables/colors";
+@import "scss/abstracts/variables/typography";
+
+// Accessibility
+@import "scss/utilities/accessibility";
+
+// Alignments
+@import "scss/utilities/alignments";
+
+// Base
+@import "scss/base/typography/typescale";
+@import "scss/base/elements/body";
+@import "scss/base/elements/buttons";
+@import "scss/base/elements/fields";
+@import "scss/base/elements/hr";
+@import "scss/base/elements/links";
+@import "scss/base/elements/lists";
+@import "scss/base/elements/media";
+@import "scss/base/typography/fonts";
+@import "scss/base/typography/headings";
+@import "scss/base/typography/copy";
+@import "scss/base/typography/typography";
+
+// Components
+@import "scss/components/content/forms";
+@import "scss/components/content/posts-and-pages";
+@import "scss/components/media/captions";
+@import "scss/components/media/media";
+@import "scss/components/navigation/main-navigation";
+@import "scss/components/navigation/mobile-menu";
+@import "scss/components/widgets/widgets";
+
+// Layouts
+@import "scss/layout/header";
+@import "scss/layout/footer";
+
+// Pages
+@import "scss/pages/standard";
+@import "scss/pages/single";
+@import "scss/pages/home";
+@import "scss/pages/404";

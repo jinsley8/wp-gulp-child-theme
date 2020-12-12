@@ -1,0 +1,29 @@
+// Elements - Lists
+//--------------------------------------------//
+
+ul,
+ol {
+	margin: 0 0 32px 32px;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 24px;
+}
+
+li {
+	padding-bottom: 8px;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}

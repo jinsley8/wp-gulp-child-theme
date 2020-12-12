@@ -1,0 +1,202 @@
+// Positioning Mixins
+//--------------------------------------------//
+
+// Transition
+// @include transition(all 0.3s ease-in);
+
+@mixin transition($transition...) {
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+// Transform
+// transform: none|transform-functions|initial|inherit;
+// @include transform(translate(x,y));
+@mixin transform($transform...) {
+	-webkit-transform: $transform;
+	-ms-transform: $transform;
+	transform: $transform;
+}
+
+// Absolute centering objects/divs
+// @include ctr("both");
+
+@mixin ctr($axis: "both") {
+	position: absolute;
+
+	@if $axis == "y" {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	@if $axis == "x" {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	@if $axis == "both" {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+// Visually hide an element
+/// @extend %visuallyhidden;
+%visuallyhidden {
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
+
+// Flexbox display
+// @include flexbox;
+
+@mixin flexbox {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+// Inline flex
+// @include inline-flex;
+
+@mixin inline-flex() {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+
+// The 'flex' shorthand
+// flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;
+// @include flex(0 1 auto);
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex: $values;
+	-webkit-flex: $values;
+	-ms-flex: $values;
+	flex: $values;
+}
+
+// Flex Flow Direction
+// flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
+// @include flex-direction(row);
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
+// @include flex-wrap(nowrap);
+@mixin flex-wrap($wrap) {
+	-webkit-flex-wrap: $wrap;
+	-moz-flex-wrap: $wrap;
+	-ms-flex-wrap: $wrap;
+	flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// flex-flow: flex-direction flex-wrap|initial|inherit;
+// @include flex-flow(row nowrap);
+@mixin flex-flow($flow) {
+	-webkit-flex-flow: $flow;
+	-moz-flex-flow: $flow;
+	-ms-flex-flow: $flow;
+	flex-flow: $flow;
+}
+
+// Display Order
+// order: number|initial|inherit;
+// @include order(1);
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;
+	-moz-box-ordinal-group: $val;
+	-ms-flex-order: $val;
+	-webkit-order: $val;
+	order: $val;
+}
+
+// Flex grow factor
+// flex-grow: number|initial|inherit;
+// @include flex-grow(1);
+@mixin flex-grow($grow) {
+	-webkit-flex-grow: $grow;
+	-moz-flex-grow: $grow;
+	-ms-flex-grow: $grow;
+	flex-grow: $grow;
+}
+
+// Flex shrink
+// flex-shrink: number|initial|inherit;
+// @include flex-shrink(1);
+@mixin flex-shrink($shrink) {
+	-webkit-flex-shrink: $shrink;
+	-moz-flex-shrink: $shrink;
+	-ms-flex-shrink: $shrink;
+	flex-shrink: $shrink;
+}
+
+// Flex basis
+// flex-basis: number|auto|initial|inherit;
+// @include flex-basis(120px);
+@mixin flex-basis($width) {
+	-webkit-flex-basis: $width;
+	-moz-flex-basis: $width;
+	-ms-flex-basis: $width;
+	flex-basis: $width;
+}
+
+// Axis Alignment
+// justify-content: flex-start|flex-end|center|space-between|space-around|initial|inherit;
+// @include justify-content(flex-start);
+@mixin justify-content($justify) {
+	-webkit-justify-content: $justify;
+	-moz-justify-content: $justify;
+	-ms-justify-content: $justify;
+	justify-content: $justify;
+	-ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// align-content: stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;
+// @include align-content(stretch);
+@mixin align-content($align) {
+	-webkit-align-content: $align;
+	-moz-align-content: $align;
+	-ms-align-content: $align;
+	align-content: $align;
+}
+
+// Cross-axis Alignment
+// align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit;
+// @include align-items(stretch);
+@mixin align-items($align) {
+	-webkit-align-items: $align;
+	-moz-align-items: $align;
+	-ms-align-items: $align;
+	align-items: $align;
+}
+
+// Cross-axis Alignment
+// align-self: auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;
+// @include align-self(auto);
+@mixin align-self($align) {
+	-webkit-align-self: $align;
+	-moz-align-self: $align;
+	-ms-align-self: $align;
+	align-self: $align;
+}

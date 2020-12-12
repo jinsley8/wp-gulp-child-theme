@@ -1,0 +1,56 @@
+// Typography
+//--------------------------------------------//
+
+body,
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// text utility styles
+.f-nowrap {
+	white-space: nowrap;
+}
+.f-light {
+	font-weight: 300;
+}
+.f-normal {
+	font-weight: 400;
+}
+.f-med {
+	font-weight: 500;
+}
+.f-semi {
+	font-weight: 600;
+}
+.f-bold {
+	font-weight: 700;
+}
+.f-italic {
+	font-style: italic;
+}
+.t-strike {
+	text-decoration: line-through;
+}
+.t-overline {
+	text-decoration: overline;
+}
+.t-underline {
+	text-decoration: underline;
+}
+.t-caps {
+	text-transform: uppercase;
+}
+.t-regular {
+	text-transform: none;
+}
+.t-left {
+	text-align: left;
+}
+.t-right {
+	text-align: right;
+}
+.t-center {
+	text-align: center;
+}

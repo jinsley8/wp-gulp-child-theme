@@ -1,0 +1,47 @@
+// Font Mixins
+//--------------------------------------------//
+
+// Font Face
+// @include font-face(Roboto, "./assets/Roboto", 400, normal);
+
+@mixin font-face($font-name, $path, $weight: 400, $style: normal) {
+	@font-face {
+		font-family: quote($font-name);
+		font-style: $style;
+		font-weight: $weight;
+		font-display: swap;
+		src: url($path + ".woff2?v=3.15") format("woff2"),
+			url($path + ".woff?v=3.15") format("woff");
+	}
+}
+
+// Function for converting a px based font-size to rem
+// @include font-rem(16px, 24px);
+
+@mixin font-rem($font-size, $line-height: 0) {
+	font-size: $font-size;
+	font-size: ($font-size / 16px) * 1rem;
+
+	@if ($line-height > 0) {
+		line-height: $line-height;
+		line-height: ($line-height / 16px) * 1rem;
+	}
+}
+
+// Text Shadow
+// @param {Size} $x [2px] - X
+// @param {Size} $y [2px] - Y
+// @param {Size} $blur [2px] - Blur
+// @include text-shadow(2px, 2px, 2px, rgba(0,0,0,.4));
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.4)) {
+	text-shadow: $x $y $blur $color;
+}
+
+// Text Overflow
+// @include text-truncate;
+
+@mixin text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

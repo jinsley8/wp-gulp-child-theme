@@ -1,0 +1,24 @@
+// Pages - Standard Page
+//--------------------------------------------//
+
+.elementor-section.elementor-section-boxed {
+	> .elementor-container {
+		@include r(md) {
+			padding: 0 16px;
+		}
+
+		@include r(xl) {
+			padding: 0 32px;
+		}
+
+		.elementor-container {
+			@include r(md) {
+				padding: 0;
+			}
+
+			@include r(xl) {
+				padding: 0;
+			}
+		}
+	}
+}

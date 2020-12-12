@@ -1,0 +1,60 @@
+// Elements - Buttons
+//--------------------------------------------//
+
+.elementor-button {
+	font-family: $font__primary;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	@include transition(all 0.3s ease-in-out);
+	@include border-radius(3px);
+
+	&.elementor-size-sm {
+		@include font-rem(11px, 16px);
+		padding: 12px 24px;
+	}
+
+	&.elementor-size-md {
+		@include font-rem(12px, 24px);
+		padding: 16px 32px;
+		min-width: 180px;
+	}
+
+	&.elementor-size-lg {
+		@include font-rem(14px, 24px);
+		padding: 20px 32px;
+		min-width: 180px;
+	}
+
+	&.elementor-size-xl {
+		@include font-rem(16px, 24px);
+		padding: 24px 32px;
+		min-width: 180px;
+	}
+}
+
+.frm_forms.frm_style_formidable-style.with_frm_style {
+	.frm_submit {
+		button[type="submit"],
+		button.frm_button_submit {
+			color: $text-inverse-colour;
+			font-family: $font__primary;
+
+			@include font-rem(14px, 24px);
+			font-weight: 600;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			background-color: $brand-prim-colour;
+
+			@include border-radius(3px);
+			border: none;
+			padding: 16px 32px;
+			margin: 16px 0 0;
+			width: 100%;
+
+			&:hover {
+				background-color: lighten($brand-prim-colour, 6%);
+			}
+		}
+	}
+}

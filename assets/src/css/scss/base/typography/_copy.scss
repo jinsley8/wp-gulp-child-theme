@@ -1,0 +1,115 @@
+// Typography - Copy
+//--------------------------------------------//
+
+p,
+.elementor-text-editor {
+	color: $text-secondary-colour;
+	font-family: $font__secondary;
+
+	@include body-level-4;
+	font-weight: 300;
+	letter-spacing: 0;
+	padding-bottom: 0;
+
+	@include r(md) {
+		@include heading-level-3;
+	}
+
+	strong {
+		font-weight: 500;
+	}
+}
+
+.light-copy {
+	.elementor-text-editor,
+	p {
+		color: $text-inverse-colour;
+	}
+}
+
+p {
+	margin-bottom: 32px;
+}
+
+.elementor-text-editor {
+	p {
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+li {
+	color: $text-secondary-colour;
+	font-family: $font__secondary;
+
+	@include body-level-4;
+	font-weight: 300;
+	letter-spacing: 0;
+
+	@include r(md) {
+		@include heading-level-3;
+	}
+
+	strong {
+		font-weight: 500;
+	}
+}
+
+a {
+	color: $text-link-colour;
+	font-family: $font__secondary;
+
+	@include body-level-4;
+	font-weight: 300;
+	letter-spacing: 0;
+
+	@include r(md) {
+		@include heading-level-3;
+	}
+
+	strong {
+		font-weight: 500;
+	}
+}
+
+blockquote {
+	border-left: 3px solid $brand-prim-colour;
+	padding: 8px 32px;
+	margin-bottom: 32px;
+
+	@include r(md) {
+		padding: 16px 40px;
+	}
+
+	p {
+		color: $text-primary-colour;
+
+		@include font-rem(20px, 28px);
+		font-style: italic;
+		margin: 0;
+
+		@include r(md) {
+			@include font-rem(24px, 32px);
+		}
+	}
+}
+
+p {
+	+ blockquote,
+	+ h2,
+	+ h3 {
+		margin-top: 64px;
+	}
+}
+
+ol {
+	ol,
+	ul {
+		margin-top: 16px;
+	}
+
+	> li {
+		margin-bottom: 24px;
+	}
+}

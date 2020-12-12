@@ -1,0 +1,25 @@
+// Elements - Links
+//--------------------------------------------//
+
+a {
+	color: $text-link-colour;
+
+	&:visited {
+		color: $text-primary-colour;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($text-link-colour, 10%);
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
