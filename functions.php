@@ -2,7 +2,7 @@
 /**
  * Child Theme functions and definitions
  *
- * @package wp-gulp-child
+ * @package WP Gulp Child
  * @since 1.0.0
  */
 

@@ -8,21 +8,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue scripts
  *
- * @package fore8
+ * @package WP Gulp Child Theme
+ * @since 1.0.0
  */
+
+/**
+ * Define Constants
+ */
+define( 'ASTRA_CHILD_THEME_VERSION', '1.0.0' );
+
 
 if ( ! function_exists( 'site_scripts' ) ) :
   function site_scripts() {
 
-    wp_enqueue_style( 'cassio-style' , get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-theme-css', get_stylesheet_directory_uri() . '/style.min.css', array('astra-theme-css'), ASTRA_CHILD_THEME_VERSION, 'all' );
 
-    wp_enqueue_style( 'cassio-child-style',
-        get_stylesheet_directory_uri() . '/style.min.css',
-        array( 'cassio-style' ),
-        wp_get_theme()->get('Version')
-    );
-
-    // wp_enqueue_script('custom-scripts', get_stylesheet_directory_uri() . '/assets/dist/js/custom.min.js', array('jquery'), ASTRA_CHILD_THEME_VERSION, true);
+    wp_enqueue_script('custom-scripts', get_stylesheet_directory_uri() . '/assets/dist/js/custom.min.js', array('jquery'), ASTRA_CHILD_THEME_VERSION, true);
 
   }
 
