@@ -19,15 +19,22 @@
   "bugs": {
     "url": "https://github.com/jinsley8/wp-gulp-child-theme/issues"
   },
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/register": "^7.9.0",
-    "@wordpress/scripts": "^12.2.1",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/register": "^7.16.0",
+    "@wordpress/eslint-plugin": "^9.3.0",
     "beepbeep": "^1.2.2",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.7",
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -44,18 +51,17 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-uglifycss": "^1.1.0"
+    "gulp-uglifycss": "^1.1.0",
+    "prettier": "^2.5.0"
   },
   "scripts": {
     "dev": "gulp",
     "styles": "gulp styles",
-    "vendorsJS": "gulp vendorsJS",
-    "customJS": "gulp customJS",
+    "vendors-js": "gulp vendorsJS",
+    "custom-js": "gulp customJS",
     "images": "gulp images",
-    "clearCache": "gulp clearCache",
-    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "lint:scss": "wp-scripts lint-style 'assets/src/css/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'assets/src/js/*.js'"
+    "clear-cache": "gulp clearCache",
+    "lint": "eslint assets/src/js/**/*.js",
+    "lint:fix": "eslint assets/src/js/**/*.js --fix"
   }
 }
