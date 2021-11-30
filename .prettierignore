@@ -1,0 +1,8 @@
+# Dependencies
+node_modules
+
+# Compiled output
+assets/dist
+
+# Theme Folders
+login
