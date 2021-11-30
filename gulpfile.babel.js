@@ -25,7 +25,6 @@
 /**
  * Load Gulp Configuration.
  *
- * TODO: Customize your project in the gulp.js file.
  */
 const config = require("./gulp.config.js");
 
@@ -65,8 +64,7 @@ const beep = require("beepbeep");
 /**
  * Custom Error Handler.
  *
- * @param r
- * @param Mixed err
+ * @param {*} r
  */
 const errorHandler = (r) => {
 	notify.onError("\n\n❌  ===> ERROR: <%= error.message %>\n")(r);
@@ -80,24 +78,21 @@ const errorHandler = (r) => {
  *
  * Live Reloads, CSS injections, Localhost tunneling.
  *
- * @link http://www.browsersync.io/docs/options/
+ * {@link http://www.browsersync.io/docs/options/}
  *
- * @param {Mixed} done Done.
+ * @param {*} done Done.
  */
 const browsersync = (done) => {
 	browserSync.init({
-		proxy: {
-			target: config.projectURL,
-		},
+		proxy: config.projectURL,
 		open: config.browserAutoOpen,
 		injectChanges: config.injectChanges,
-		notify: false,
 		watchEvents: ["change", "add", "unlink", "addDir", "unlinkDir"],
 	});
 	done();
 };
 
-// Helper functi on to allow browser reload with Gulp 4.
+// Helper function to allow browser reload with Gulp 4.
 const reload = (done) => {
 	browserSync.reload();
 	done();
@@ -180,7 +175,7 @@ gulp.task("vendorsJS", () => {
 		.pipe(remember(config.jsVendorSRC)) // Bring all files back to stream.
 		.pipe(concat(config.jsVendorFile + ".js"))
 		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-		.pipe(gulp.dest(config.jsVendorProcessDest))
+		.pipe(gulp.dest(config.jsVendorDestination))
 		.pipe(
 			rename({
 				basename: config.jsVendorFile,
@@ -225,7 +220,7 @@ gulp.task("customJS", () => {
 		.pipe(remember(config.jsCustomSRC)) // Bring all files back to stream.
 		.pipe(concat(config.jsCustomFile + ".js"))
 		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-		.pipe(gulp.dest(config.jsCustomProcessDest))
+		.pipe(gulp.dest(config.jsCustomDestination))
 		.pipe(
 			rename({
 				basename: config.jsCustomFile,
@@ -255,7 +250,7 @@ gulp.task("customJS", () => {
  *
  * Read the following to change these options.
  *
- * @link https://github.com/sindresorhus/gulp-imagemin
+ * {@link https://github.com/sindresorhus/gulp-imagemin}
  */
 gulp.task("images", () => {
 	return gulp
@@ -264,10 +259,10 @@ gulp.task("images", () => {
 			cache(
 				imagemin([
 					imagemin.gifsicle({ interlaced: true }),
-					imagemin.mozjpeg({ quality: 75 }),
+					imagemin.mozjpeg({ quality: 75, progressive: true }),
 					imagemin.optipng({ optimizationLevel: 4 }), // 0- 7 low-high.
 					imagemin.svgo({
-						plugins: [{ removeViewBox: false }, { cleanupIDs: false }],
+						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
 					}),
 				])
 			)
