@@ -20,11 +20,11 @@
 
 @mixin font-rem($font-size, $line-height: 0) {
 	font-size: $font-size;
-	font-size: ($font-size / 16px) * 1rem;
+	font-size: calc($font-size / 16px) * 1rem;
 
 	@if ($line-height > 0) {
 		line-height: $line-height;
-		line-height: ($line-height / 16px) * 1rem;
+		line-height: calc($line-height / 16px) * 1rem;
 	}
 }
 
