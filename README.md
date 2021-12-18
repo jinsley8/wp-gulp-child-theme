@@ -2,6 +2,27 @@
 
 This is a child theme boilerplate that uses a gulp workflow to watch, concatenate, minify, and optimize files for production.
 
+## Requirements
+
+This child theme requires [Node.js][node] 12+ to run Gulp.
+
+### Linux and macOS
+
+To install [Node.js][node] you can use [nvm][nvm]:
+
+```sh
+nvm install node
+```
+
+You can also install Node.js using a package manager like for example [Homebrew][brew]:
+
+```sh
+brew install node
+```
+
+Alternatively, you can also download pre-built packages from the [Node.js][node] website for your particular Operating System.
+
+
 ## Install the Dependencies
 
 Install child theme into the WordPress theme directory at /wp-content/themes/.
