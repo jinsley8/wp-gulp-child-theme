@@ -12,9 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Add Google Analytics
+ * Add Google Analytics - Only use one of these methods GA4 or Google Tag Manager
  */
 require_once( 'inc/google-analytics.php');
+// require_once( 'inc/google-tag-manager.php');
 
 /**
  * Enqueue scripts and styles.
