@@ -1,10 +1,17 @@
 <?php
 
+
 /**
- * Enqueue Google Analytics script
+ * Enqueue Google Analytics 4 script
  *
  * @package WP Gulp Child Theme
  */
+
+/* Add Google Analytics 4 Site Tag as close to
+the opening <head> tag as possible
+=====================================================*/
+
+define("GA4","G-XXXXXX", false);
 
 function add_google_analytics() {
 
@@ -13,17 +20,17 @@ function add_google_analytics() {
     ?>
       <!-- Start Google Analytics Script -->
       <!-- Global Site Tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA4 ?>"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments)};
         gtag('js', new Date());
 
-        gtag('config', 'UA-XXXXX-Y'); // UA property
-        // gtag('config', 'G-XXXXX'); // Added Google Analytics 4 ID
+        gtag('config', '<?php echo GA4 ?>');
       </script>
       <!-- End Google Analytics Script -->
     <?php
   }
 }
+
 add_action('wp_head', 'add_google_analytics');
