@@ -4,23 +4,23 @@ This is a child theme boilerplate that uses a gulp workflow to watch, concatenat
 
 ## Requirements
 
-This child theme requires [Node.js][node] 12+ to run Gulp.
+This child theme requires [Node.js](https://nodejs.org/en/) 12+ to run Gulp.
 
 ### Linux and macOS
 
-To install [Node.js][node] you can use [nvm][nvm]:
+To install [Node.js](https://nodejs.org/en/) you can use [nvm](https://github.com/nvm-sh/nvm):
 
 ```sh
 nvm install node
 ```
 
-You can also install Node.js using a package manager like for example [Homebrew][brew]:
+You can also install Node.js using a package manager like for example [Homebrew](https://brew.sh/):
 
 ```sh
 brew install node
 ```
 
-Alternatively, you can also download pre-built packages from the [Node.js][node] website for your particular Operating System.
+Alternatively, you can also download pre-built packages from the [Node.js](https://nodejs.org/en/) website for your particular Operating System.
 
 
 ## Install the Dependencies
