@@ -1,6 +1,7 @@
-**/*.min.js
-**/node_modules/**
-**/vendor/**
+
+node_modules
 assets/dist/
+**/vendor/**
+**/*.min.js
 gulp.config.js
-gulpfile.babel.js
+gulpfile.js

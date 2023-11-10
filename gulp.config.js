@@ -31,8 +31,6 @@ const styleDestination = "./";
 
 // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 const outputStyle = "compressed";
-const errLogToConsole = true;
-const precision = 10;
 
 // JS Vendor options.
 // Path to JS vendor folder.
@@ -81,27 +79,27 @@ const watchPhp = "./**/*.php";
 const BROWSERS_LIST = ["last 2 version", "> 1%"];
 
 // Export.
-module.exports = {
-	projectURL,
-	productURL,
-	browserAutoOpen,
-	injectChanges,
-	styleSRC,
-	styleDestination,
-	outputStyle,
-	errLogToConsole,
-	precision,
-	jsVendorSRC,
-	jsVendorDestination,
-	jsVendorFile,
-	jsCustomSRC,
-	jsCustomDestination,
-	jsCustomFile,
-	imgSRC,
-	imgDST,
-	watchStyles,
-	watchJsVendor,
-	watchJsCustom,
-	watchPhp,
-	BROWSERS_LIST,
+const config = {
+    projectURL,
+    productURL,
+    browserAutoOpen,
+    injectChanges,
+    styleSRC,
+    styleDestination,
+    outputStyle,
+    jsVendorSRC,
+    jsVendorDestination,
+    jsVendorFile,
+    jsCustomSRC,
+    jsCustomDestination,
+    jsCustomFile,
+    imgSRC,
+    imgDST,
+    watchStyles,
+    watchJsVendor,
+    watchJsCustom,
+    watchPhp,
+    BROWSERS_LIST,
 };
+
+export default config;

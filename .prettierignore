@@ -6,3 +6,6 @@ assets/dist
 
 # Theme Folders
 login
+
+# Ignore all JS files:
+**/*.js

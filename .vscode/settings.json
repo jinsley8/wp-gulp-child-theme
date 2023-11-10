@@ -1,0 +1,14 @@
+{
+    "eslint.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": false,
+        "source.addMissingImports": true
+    },
+}
