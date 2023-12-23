@@ -1,57 +1,59 @@
 # WP Gulp WordPress Child Theme
 
-This is a child theme boilerplate that uses a gulp workflow to watch, concatenate, minify, and optimize files for production.
+This child theme boilerplate streamlines development using a Gulp workflow to watch, concatenate, minify, and optimize files for production.
 
 ## Requirements
 
-This child theme requires [Node.js](https://nodejs.org/en/) 12+ to run Gulp.
+**Node.js**: This child theme requires [Node.js](https://nodejs.org/en/) 18 or later to run Gulp.
 
-### Linux and macOS
+### Installation of Node.js
 
-To install [Node.js](https://nodejs.org/en/) you can use [nvm](https://github.com/nvm-sh/nvm):
+To install [Node.js](https://nodejs.org/en/), follow one of these methods:
+
+1. Using [nvm](https://github.com/nvm-sh/nvm):
 
 ```sh
 nvm install node
 ```
 
-You can also install Node.js using a package manager like for example [Homebrew](https://brew.sh/):
+2. Using [Homebrew](https://brew.sh/):
 
 ```sh
 brew install node
 ```
 
-Alternatively, you can also download pre-built packages from the [Node.js](https://nodejs.org/en/) website for your particular Operating System.
+Download pre-built packages from the [Node.js](https://nodejs.org/en/) website for your particular Operating System.
 
+## Optional: Install Bun
 
-## Install the Dependencies
+[Bun](https://bun.sh/docs/installation#installing) can be used as the package manager in replacement of npm to install packages up to 30x faster. [Bun](https://bun.sh/docs/installation#installing) can be installed via curl, npm, or homebrew:
 
-Install child theme into the WordPress theme directory at /wp-content/themes/.
+## Getting Started
 
-Next, we need to install dependencies for **wp-gulp-child-theme**. Change into this directory and install with **npm** or **yarn**.
+### Installation
+
+1. Install the child theme into the WordPress theme directory at /wp-content/themes/.
+
+2. Navigate to the **wp-gulp-child-theme** directory:
+
+3. Choose a package manager to install dependencies:
+
+With **bun**:
+
+```bash
+bun install
+```
 
 With **npm**:
 
 ```bash
-cd wp-gulp-child-theme
 npm install
 ```
 
-With **yarn**:
+### Running Gulp
+
+This child theme uses an automated tasks using **gulp** to watch and process files. Execute the script defined in its **package.json**:
 
 ```bash
-cd wp-gulp-child-theme
-yarn
+npm run dev
 ```
-
-## Run Gulp to watch for file changes
-
-This child theme uses an automated workflow using **gulp** to watch and process files. Run it with the script provided in its **package.json** file.
-
-```bash
-cd wp-gulp-child-theme
-yarn dev
-```
-
-## WordPress Plugin Dependencies
-
-Some styles and functions are dependent on Elementor and Formidable Forms but can be removed.
