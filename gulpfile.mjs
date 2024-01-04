@@ -69,14 +69,8 @@ import fancyLog from 'fancy-log';
 // Sass
 const sass = gulpSass(dartSass);
 
-const sassConfig = {
-	outputStyle: config.outputStyle,
-};
-
 /**
  * Custom Error Handler.
- *
- * @param {*} r
  */
 const errorHandler = () => {
 	return plumber({
@@ -94,6 +88,7 @@ const log = message => {
 // Task names
 const TASKS = {
 	STYLES: 'styles',
+	MINIFY_STYLES: 'minifyStyles',
 	VENDORS_JS: 'vendorsJS',
 	CUSTOM_JS: 'customJS',
 	IMAGES: 'images',
@@ -112,7 +107,10 @@ const TASKS = {
  */
 const browsersync = done => {
 	browserSync.init({
-		proxy: config.projectURL,
+		watch: true,
+		proxy: {
+			target: config.projectURL,
+		},
 		open: config.browserAutoOpen,
 		injectChanges: config.injectChanges,
 		watchEvents: ['change', 'add', 'unlink', 'addDir', 'unlinkDir'],
@@ -141,11 +139,12 @@ const reload = done => {
  *    7. Injects CSS or reloads the browser via browserSync
  */
 gulp.task('styles', () => {
+	log('\n\n✨ ===> Running STYLES task...\n');
 	return gulp
 		.src(config.styleSRC, { allowEmpty: true })
 		.pipe(plumber(errorHandler))
 		.pipe(sourcemaps.init())
-		.pipe(sass(sassConfig).on('error', sass.logError))
+		.pipe(sass({ outputStyle: config.outputStyle }).on('error', sass.logError))
 		.pipe(sourcemaps.write({ includeContent: false }))
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(autoprefixer(config.BROWSERS_LIST))
@@ -155,18 +154,26 @@ gulp.task('styles', () => {
 		.pipe(filter('**/*.css')) // Filtering stream to only css files.
 		.pipe(mmq({ log: true })) // Merge Media Queries only for .min.css version.
 		.pipe(browserSync.stream()) // Reloads style.css if that is enqueued.
+		.pipe(notify({ message: '\n\n✅  ===> STYLES — completed!\n', wait: true, onLast: true }));
+});
+
+gulp.task('minifyStyles', () => {
+	log('\n\n✨ ===> Running STYLES Minification task...\n');
+	return gulp
+		.src(config.styleDestination + '*.css')
+		.pipe(plumber(errorHandler))
+		.pipe(filter(['*', '!*.min.css'])) // Exclude already minified files
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(
-			cleanCSS({ debug: true }, details => {
-				log(`${details.name}: ${details.stats.originalSize}`);
-				log(`${details.name}: ${details.stats.minifiedSize}`);
+			cleanCSS(config.outputStyleMin, details => {
+				console.log(`${details.name}: ${details.stats.originalSize}`);
+				console.log(`${details.name}: ${details.stats.minifiedSize}`);
 			})
 		)
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
+		.pipe(lineec())
 		.pipe(gulp.dest(config.styleDestination))
-		.pipe(filter('**/*.css')) // Filtering stream to only css files.
-		.pipe(browserSync.stream()) // Reloads style.min.css if that is enqueued.
-		.pipe(notify({ message: '\n\n✅  ===> STYLES — completed!\n', onLast: true }));
+		.pipe(browserSync.stream())
+		.pipe(notify({ message: '\n\n✅  ===> STYLES Minification — completed!\n', onLast: true }));
 });
 
 /**
@@ -314,6 +321,7 @@ const watch = () => {
 	log('\n\n✨ ===> Watching for changes...\n');
 	gulp.watch(config.watchPhp, reload);
 	gulp.watch(config.watchStyles, gulp.parallel(TASKS.STYLES));
+	gulp.watch(config.watchStyles, gulp.parallel(TASKS.MINIFY_STYLES));
 	gulp.watch(config.watchJsVendor, gulp.series(TASKS.VENDORS_JS, reload));
 	gulp.watch(config.watchJsCustom, gulp.series(TASKS.CUSTOM_JS, reload));
 	gulp.watch(config.imgSRC, gulp.series(TASKS.IMAGES, reload));
@@ -326,5 +334,13 @@ const watch = () => {
  */
 gulp.task(
 	'default',
-	gulp.parallel(TASKS.STYLES, TASKS.VENDORS_JS, TASKS.CUSTOM_JS, TASKS.IMAGES, browsersync, watch)
+	gulp.parallel(
+		TASKS.STYLES,
+		TASKS.MINIFY_STYLES,
+		TASKS.VENDORS_JS,
+		TASKS.CUSTOM_JS,
+		TASKS.IMAGES,
+		browsersync,
+		watch
+	)
 );

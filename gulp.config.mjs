@@ -15,91 +15,93 @@
 // Local project URL of your already running WordPress site.
 // Could be something like "wp-gulp-child-theme.local" or "localhost"
 // depending upon your local WordPress setup.
-const projectURL = "wp-gulp-child-theme.local";
+const projectURL = 'https://wp-gulp-child-theme.local';
 
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
-const productURL = "./";
+const productURL = './';
 const browserAutoOpen = false;
 const injectChanges = true;
 
 // >>>>> Style options.
 // Path to main .scss file.
-const styleSRC = "./assets/src/css/style.scss";
+const styleSRC = './assets/src/css/style.scss';
 
 // Path to place the compiled CSS file. Default set to root folder.
-const styleDestination = "./";
+const styleDestination = './';
 
 // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
-const outputStyle = "compressed";
+const outputStyle = 'expanded';
+const outputStyleMin = 'compressed';
 
 // JS Vendor options.
 // Path to JS vendor folder.
-const jsVendorSRC = "./assets/src/js/vendor/*.js";
+const jsVendorSRC = './assets/src/js/vendor/*.js';
 
 // Path to place the compiled JS vendors file.
-const jsVendorDestination = "./assets/dist/js/";
+const jsVendorDestination = './assets/dist/js/';
 
 // Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
-const jsVendorFile = "vendor";
+const jsVendorFile = 'vendor';
 
 // JS Custom options.
 // Path to JS custom scripts folder.
-const jsCustomSRC = "./assets/src/js/custom/*.js";
+const jsCustomSRC = './assets/src/js/custom/*.js';
 
 // Path to place the compiled JS custom scripts file.
-const jsCustomDestination = "./assets/dist/js/";
+const jsCustomDestination = './assets/dist/js/';
 
 // Compiled JS custom file name. Default set to custom i.e. custom.js.
-const jsCustomFile = "custom";
+const jsCustomFile = 'custom';
 
 // Images options.
 // Source folder of images which should be optimized and watched.
 // > You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
-const imgSRC = "./assets/src/img/raw/**/*";
+const imgSRC = './assets/src/img/raw/**/*';
 
 // Destination folder of optimized images.
 // > Must be different from the imagesSRC folder.
-const imgDST = "./assets/dist/img/";
+const imgDST = './assets/dist/img/';
 
 // >>>>> Watch files paths.
 // Path to all *.scss files inside css folder and inside them.
-const watchStyles = "./assets/src/css/**/*.scss";
+const watchStyles = './assets/src/css/**/*.scss';
 
 // Path to all vendor JS files.
-const watchJsVendor = "./assets/src/js/vendor/*.js";
+const watchJsVendor = './assets/src/js/vendor/*.js';
 
 // Path to all custom JS files.
-const watchJsCustom = "./assets/src/js/custom/*.js";
+const watchJsCustom = './assets/src/js/custom/*.js';
 
 // Path to all PHP files.
-const watchPhp = "./**/*.php";
+const watchPhp = './**/*.php';
 
 // Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
 // The following list is set as per WordPress requirements. Though; Feel free to change.
-const BROWSERS_LIST = ["last 2 version", "> 1%"];
+const BROWSERS_LIST = ['last 2 version', '> 1%'];
 
 // Export.
 const config = {
-    projectURL,
-    productURL,
-    browserAutoOpen,
-    injectChanges,
-    styleSRC,
-    styleDestination,
-    outputStyle,
-    jsVendorSRC,
-    jsVendorDestination,
-    jsVendorFile,
-    jsCustomSRC,
-    jsCustomDestination,
-    jsCustomFile,
-    imgSRC,
-    imgDST,
-    watchStyles,
-    watchJsVendor,
-    watchJsCustom,
-    watchPhp,
-    BROWSERS_LIST,
+	projectURL,
+	productURL,
+	browserAutoOpen,
+	injectChanges,
+	styleSRC,
+	styleDestination,
+	outputStyle,
+	outputStyleMin,
+	jsVendorSRC,
+	jsVendorDestination,
+	jsVendorFile,
+	jsCustomSRC,
+	jsCustomDestination,
+	jsCustomFile,
+	imgSRC,
+	imgDST,
+	watchStyles,
+	watchJsVendor,
+	watchJsCustom,
+	watchPhp,
+	BROWSERS_LIST,
 };
 
 export default config;
