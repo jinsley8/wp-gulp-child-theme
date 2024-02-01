@@ -32,7 +32,7 @@
 		"clear-cache": "gulp clearCache",
 		"lint": "eslint assets/src/js/**/*.js",
 		"lint:fix": "eslint assets/src/js/**/*.js --fix",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"dependencies": {},
 	"devDependencies": {
@@ -63,13 +63,22 @@
 		"gulp-sass": "^5.1.0",
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
-		"husky": "^8.0.3",
-		"prettier": "2.8.8",
+		"husky": "^9.0.10",
+        "lint-staged": "^15.2.0",
+        "prettier": "3.2.4",
 		"sass": "^1.69.7"
 	},
 	"husky": {
 		"hooks": {
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 		}
+	},
+	"lint-staged": {
+		"**/*.{json,js}": [
+			"eslint --fix --quiet"
+		],
+		"./assets/src/**/*.{json,js}": [
+			"prettier --write"
+		]
 	}
 }
