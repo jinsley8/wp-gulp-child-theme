@@ -8,6 +8,8 @@ This child theme boilerplate streamlines development using a Gulp workflow to wa
 
 ### Installation of Node.js
 
+Use Node.js version 18.18.0 to 20.x only.
+
 To install [Node.js](https://nodejs.org/en/), follow one of these methods:
 
 1. Using [nvm](https://github.com/nvm-sh/nvm):
