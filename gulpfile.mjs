@@ -74,14 +74,14 @@ const sass = gulpSass(dartSass);
  */
 const errorHandler = () => {
 	return plumber({
-		errorHandler: error => {
+		errorHandler: (error) => {
 			fancyLog.error(`\n\n❌  ===> ERROR: ${error.message}\n`);
 			beep();
 		},
 	});
 };
 
-const log = message => {
+const log = (message) => {
 	fancyLog(message);
 };
 
@@ -105,7 +105,7 @@ const TASKS = {
  *
  * @param {*} done Done.
  */
-const browsersync = done => {
+const browsersync = (done) => {
 	browserSync.init({
 		watch: true,
 		proxy: {
@@ -119,7 +119,7 @@ const browsersync = done => {
 };
 
 // Helper function to allow browser reload with Gulp 4.
-const reload = done => {
+const reload = (done) => {
 	browserSync.reload();
 	done();
 };
@@ -165,7 +165,7 @@ gulp.task('minifyStyles', () => {
 		.pipe(filter(['*', '!*.min.css'])) // Exclude already minified files
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(
-			cleanCSS(config.outputStyleMin, details => {
+			cleanCSS(config.outputStyleMin, (details) => {
 				console.log(`${details.name}: ${details.stats.originalSize}`);
 				console.log(`${details.name}: ${details.stats.minifiedSize}`);
 			})
@@ -334,13 +334,5 @@ const watch = () => {
  */
 gulp.task(
 	'default',
-	gulp.parallel(
-		TASKS.STYLES,
-		TASKS.MINIFY_STYLES,
-		TASKS.VENDORS_JS,
-		TASKS.CUSTOM_JS,
-		TASKS.IMAGES,
-		browsersync,
-		watch
-	)
+	gulp.parallel(TASKS.STYLES, TASKS.MINIFY_STYLES, TASKS.VENDORS_JS, TASKS.CUSTOM_JS, TASKS.IMAGES, browsersync, watch)
 );
