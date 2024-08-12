@@ -1,6 +1,3 @@
-/* eslint-disable quotes */
-/* eslint-disable no-undef */
-
 /**
  * WPGulp Configuration File
  *

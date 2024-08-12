@@ -1,9 +1,3 @@
-/* eslint-disable array-bracket-spacing */
-/* eslint-disable space-before-function-paren */
-/* eslint-disable space-in-parens */
-/* eslint-disable quotes */
-/* eslint-disable no-undef */
-
 /**
  * Gulpfile.
  *
