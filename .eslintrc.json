@@ -21,6 +21,7 @@
 		"quotes": ["error", "single"],
 		"linebreak-style": ["error", "unix"],
 		"no-unused-vars": ["warn"],
-		"no-console": "off"
+		"no-console": "off",
+		"@wordpress/no-wp-process-env": "off"
 	}
 }
