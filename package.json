@@ -20,7 +20,7 @@
 		"url": "https://github.com/jinsley8/wp-gulp-child-theme/issues"
 	},
 	"engines": {
-		"node": ">=18.0.0"
+		"node": ">=20.11.0"
 	},
 	"private": true,
 	"scripts": {
@@ -36,12 +36,12 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@commitlint/cli": "^18.4.4",
-		"@commitlint/config-conventional": "^18.4.4",
-		"@wordpress/eslint-plugin": "^17.5.0",
+		"@commitlint/cli": "^19.4.0",
+		"@commitlint/config-conventional": "^19.2.2",
+		"@wordpress/eslint-plugin": "^20.2.0",
 		"beepbeep": "^1.2.2",
 		"browser-sync": "^3.0.2",
-		"commitlint": "^18.4.4",
+		"commitlint": "^19.4.0",
 		"eslint": "8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.2.1",
