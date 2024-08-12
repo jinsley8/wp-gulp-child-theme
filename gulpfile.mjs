@@ -107,13 +107,12 @@ const TASKS = {
  */
 const browsersync = (done) => {
 	browserSync.init({
-		watch: true,
-		proxy: {
-			target: config.projectURL,
-		},
+		proxy: config.projectURL,
 		open: config.browserAutoOpen,
 		injectChanges: config.injectChanges,
-		watchEvents: ['change', 'add', 'unlink', 'addDir', 'unlinkDir'],
+		watchOptions: {
+			ignored: '*.txt',
+		},
 	});
 	done();
 };
@@ -319,9 +318,8 @@ gulp.task('clearCache', function (done) {
  */
 const watch = () => {
 	log('\n\n✨ ===> Watching for changes...\n');
-	gulp.watch(config.watchPhp, reload);
-	gulp.watch(config.watchStyles, gulp.parallel(TASKS.STYLES));
-	gulp.watch(config.watchStyles, gulp.parallel(TASKS.MINIFY_STYLES));
+	gulp.watch(config.watchPhp, gulp.series(reload));
+	gulp.watch(config.watchStyles, gulp.series(TASKS.STYLES, TASKS.MINIFY_STYLES));
 	gulp.watch(config.watchJsVendor, gulp.series(TASKS.VENDORS_JS, reload));
 	gulp.watch(config.watchJsCustom, gulp.series(TASKS.CUSTOM_JS, reload));
 	gulp.watch(config.imgSRC, gulp.series(TASKS.IMAGES, reload));
