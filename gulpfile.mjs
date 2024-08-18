@@ -30,7 +30,6 @@ import config from './gulp.config.mjs';
 import gulp from 'gulp'; // Gulp of-course.
 
 // CSS related plugins.
-
 import cleanCSS from 'gulp-clean-css';
 import autoprefixer from 'gulp-autoprefixer'; // Autoprefixing magic.
 import mmq from 'gulp-merge-media-queries'; // Combine matching media queries into one.
@@ -40,7 +39,6 @@ import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass'; // Gulp plugin for Sass compilation.
 
 // JS related plugins.
-import concat from 'gulp-concat'; // Concatenates JS files.
 import uglify from 'gulp-uglify'; // Minifies JS files.
 import babel from 'gulp-babel'; // Compiles ESNext to browser compatible JS.
 
@@ -183,32 +181,16 @@ gulp.task('minifyStyles', () => {
 gulp.task('vendorsJS', () => {
 	log('\n\n✨ ===> Running VENDORS JS task...\n');
 	return gulp
-		.src(config.jsVendorSRC, { since: gulp.lastRun(TASKS.VENDORS_JS) }) // Only run on changed files.
+		.src(config.jsVendorSRC, { since: gulp.lastRun('vendorsJS') })
 		.pipe(plumber(errorHandler))
 		.pipe(
 			babel({
-				presets: [
-					[
-						'@babel/preset-env', // Preset to compile your modern JS to ES5.
-						{
-							targets: { browsers: config.BROWSERS_LIST }, // Target browser list to support.,
-						},
-					],
-				],
-			})
-		)
-		.pipe(remember(config.jsVendorSRC)) // Bring all files back to stream.
-		.pipe(concat(config.jsVendorFile + '.js'))
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-		.pipe(gulp.dest(config.jsVendorDestination))
-		.pipe(
-			rename({
-				basename: config.jsVendorFile,
-				suffix: '.min',
+				presets: [['@babel/preset-env', { targets: { browsers: config.BROWSERS_LIST } }]],
 			})
 		)
 		.pipe(uglify())
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
+		.pipe(lineec())
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(config.jsVendorDestination))
 		.pipe(notify({ message: '\n\n✅  ===> VENDOR JS — completed!\n', onLast: true }));
 });
@@ -227,32 +209,16 @@ gulp.task('vendorsJS', () => {
 gulp.task('customJS', () => {
 	log('\n\n✨ ===> Running CUSTOM JS task...\n');
 	return gulp
-		.src(config.jsCustomSRC, { since: gulp.lastRun(TASKS.CUSTOM_JS) }) // Only run on changed files.
+		.src(config.jsCustomSRC, { since: gulp.lastRun('customJS') })
 		.pipe(plumber(errorHandler))
 		.pipe(
 			babel({
-				presets: [
-					[
-						'@babel/preset-env', // Preset to compile your modern JS to ES5.
-						{
-							targets: { browsers: config.BROWSERS_LIST }, // Target browser list to support.
-						},
-					],
-				],
-			})
-		)
-		.pipe(remember(config.jsCustomSRC)) // Bring all files back to stream.
-		.pipe(concat(config.jsCustomFile + '.js'))
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-		.pipe(gulp.dest(config.jsCustomDestination))
-		.pipe(
-			rename({
-				basename: config.jsCustomFile,
-				suffix: '.min',
+				presets: [['@babel/preset-env', { targets: { browsers: config.BROWSERS_LIST } }]],
 			})
 		)
 		.pipe(uglify())
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
+		.pipe(lineec())
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(config.jsCustomDestination))
 		.pipe(notify({ message: '\n\n✅  ===> CUSTOM JS — completed!\n', onLast: true }));
 });

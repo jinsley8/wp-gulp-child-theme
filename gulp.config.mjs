@@ -32,23 +32,15 @@ const outputStyleMin = 'compressed';
 
 // JS Vendor options.
 // Path to JS vendor folder.
-const jsVendorSRC = './assets/src/js/vendor/*.js';
-
+const jsVendorSRC = './assets/src/js/vendor/**/*.js';
 // Path to place the compiled JS vendors file.
-const jsVendorDestination = './assets/dist/js/';
-
-// Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
-const jsVendorFile = 'vendor';
+const jsVendorDestination = './assets/dist/js/vendor/';
 
 // JS Custom options.
 // Path to JS custom scripts folder.
-const jsCustomSRC = './assets/src/js/custom/*.js';
-
+const jsCustomSRC = './assets/src/js/custom/**/*.js';
 // Path to place the compiled JS custom scripts file.
-const jsCustomDestination = './assets/dist/js/';
-
-// Compiled JS custom file name. Default set to custom i.e. custom.js.
-const jsCustomFile = 'custom';
+const jsCustomDestination = './assets/dist/js/custom/';
 
 // Images options.
 // Source folder of images which should be optimized and watched.
@@ -88,10 +80,8 @@ const config = {
 	outputStyleMin,
 	jsVendorSRC,
 	jsVendorDestination,
-	jsVendorFile,
 	jsCustomSRC,
 	jsCustomDestination,
-	jsCustomFile,
 	imgSRC,
 	imgDST,
 	watchStyles,
