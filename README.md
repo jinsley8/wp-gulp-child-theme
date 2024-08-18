@@ -4,11 +4,11 @@ This child theme boilerplate streamlines development using a Gulp workflow to wa
 
 ## Requirements
 
-**Node.js**: This child theme requires [Node.js](https://nodejs.org/en/) 18 or later to run Gulp.
+**Node.js**: This child theme requires [Node.js](https://nodejs.org/en/) 20 or later to run Gulp.
 
 ### Installation of Node.js
 
-Use Node.js version 18.18.0 to 20.x only.
+Use Node.js version 20.11.0 or higher.
 
 To install [Node.js](https://nodejs.org/en/), follow one of these methods:
 
