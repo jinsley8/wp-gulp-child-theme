@@ -1,57 +1,62 @@
+@use '../../abstracts/mixins/media-queries';
+@use '../../abstracts/variables/colors';
+@use '../../abstracts/variables/typography';
+@use './typescale';
+
 // Typography - Headings
 //--------------------------------------------//
 
 h1,
 .elementor-widget-heading h1 {
-	color: $text-inverse-colour;
-	font-family: $font__primary;
+	color: colors.$text-inverse-colour;
+	font-family: typography.$font__primary;
 
-	@include heading-level-10;
+	@include typescale.heading-level-10;
 	font-weight: 600;
 	letter-spacing: -1px;
 
-	@include r(md) {
-		@include heading-level-9;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-9;
 	}
 
-	@include r(sm) {
-		@include heading-level-8;
+	@include media-queries.r(sm) {
+		@include typescale.heading-level-8;
 	}
 }
 
 h2,
 h2 a {
-	color: $text-primary-colour;
-	font-family: $font__primary;
+	color: colors.$text-primary-colour;
+	font-family: typography.$font__primary;
 
-	@include heading-level-8;
+	@include typescale.heading-level-8;
 	font-weight: 600;
 	letter-spacing: -0.5px;
 
-	@include r(md) {
-		@include heading-level-7;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-7;
 	}
 
-	@include r(sm) {
-		@include heading-level-6;
+	@include media-queries.r(sm) {
+		@include typescale.heading-level-6;
 	}
 }
 
 h3,
 h3 a {
-	color: $text-primary-colour;
-	font-family: $font__primary;
+	color: colors.$text-primary-colour;
+	font-family: typography.$font__primary;
 
-	@include heading-level-7;
+	@include typescale.heading-level-7;
 	font-weight: 600;
 	letter-spacing: -0.5px;
 
-	@include r(md) {
-		@include heading-level-6;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-6;
 	}
 
-	@include r(sm) {
-		@include heading-level-5;
+	@include media-queries.r(sm) {
+		@include typescale.heading-level-5;
 	}
 }
 
@@ -62,37 +67,37 @@ h3 {
 
 h4,
 h4 a {
-	color: $text-primary-colour;
-	font-family: $font__primary;
+	color: colors.$text-primary-colour;
+	font-family: typography.$font__primary;
 
-	@include heading-level-6;
+	@include typescale.heading-level-6;
 	font-weight: 600;
 	letter-spacing: -0.5px;
 
-	@include r(md) {
-		@include heading-level-5;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-5;
 	}
 
-	@include r(sm) {
-		@include heading-level-4;
+	@include media-queries.r(sm) {
+		@include typescale.heading-level-4;
 	}
 }
 
 h5,
 h5 a {
-	color: $text-primary-colour;
-	font-family: $font__primary;
+	color: colors.$text-primary-colour;
+	font-family: typography.$font__primary;
 
-	@include heading-level-5;
+	@include typescale.heading-level-5;
 	font-weight: 600;
 	letter-spacing: -0.5px;
 
-	@include r(md) {
-		@include heading-level-4;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-4;
 	}
 
-	@include r(sm) {
-		@include heading-level-3;
+	@include media-queries.r(sm) {
+		@include typescale.heading-level-3;
 	}
 }
 

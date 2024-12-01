@@ -1,7 +1,9 @@
+@use '../../abstracts/variables/colors';
+
 // Elements - Body
 //--------------------------------------------//
 
 body {
 	overscroll-behavior: none;
-	background: $background-1-colour; // Fallback for when there is no custom background color defined.
+	background: colors.$background-1-colour; // Fallback for when there is no custom background color defined.
 }

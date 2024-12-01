@@ -1,88 +1,90 @@
+@use '../../abstracts/mixins/fonts';
+
 // Typography - Type Scale
 //--------------------------------------------//
 
 // Heading Type Scale
 @mixin heading-level-10 {
-	@include font-rem(52px, 68px);
+	@include fonts.font-rem(52px, 68px);
 }
 
 @mixin heading-level-9 {
-	@include font-rem(48px, 62px);
+	@include fonts.font-rem(48px, 62px);
 }
 
 @mixin heading-level-8 {
-	@include font-rem(40px, 56px);
+	@include fonts.font-rem(40px, 56px);
 }
 
 @mixin heading-level-7 {
-	@include font-rem(32px, 48px);
+	@include fonts.font-rem(32px, 48px);
 }
 
 @mixin heading-level-6 {
-	@include font-rem(24px, 36px);
+	@include fonts.font-rem(24px, 36px);
 }
 
 @mixin heading-level-5 {
-	@include font-rem(20px, 30px);
+	@include fonts.font-rem(20px, 30px);
 }
 
 @mixin heading-level-4 {
-	@include font-rem(18px, 27px);
+	@include fonts.font-rem(18px, 27px);
 }
 
 @mixin heading-level-3 {
-	@include font-rem(16px, 24px);
+	@include fonts.font-rem(16px, 24px);
 }
 
 @mixin heading-level-2 {
-	@include font-rem(12px, 18px);
+	@include fonts.font-rem(12px, 18px);
 }
 
 @mixin heading-level-1 {
-	@include font-rem(10px, 11px);
+	@include fonts.font-rem(10px, 11px);
 }
 
 // Body Type Scale
 @mixin body-level-10 {
-	@include font-rem(48px, 72px);
+	@include fonts.font-rem(48px, 72px);
 }
 
 @mixin body-level-9 {
-	@include font-rem(40px, 60px);
+	@include fonts.font-rem(40px, 60px);
 }
 
 @mixin body-level-8 {
-	@include font-rem(32px, 54px);
+	@include fonts.font-rem(32px, 54px);
 }
 
 @mixin body-level-7 {
-	@include font-rem(28px, 48px);
+	@include fonts.font-rem(28px, 48px);
 }
 
 @mixin body-level-6 {
-	@include font-rem(24px, 40px);
+	@include fonts.font-rem(24px, 40px);
 }
 
 @mixin body-level-5 {
-	@include font-rem(20px, 34px);
+	@include fonts.font-rem(20px, 34px);
 }
 
 @mixin body-level-4 {
-	@include font-rem(18px, 30px);
+	@include fonts.font-rem(18px, 30px);
 }
 
 @mixin body-level-3 {
-	@include font-rem(16px, 27px);
+	@include fonts.font-rem(16px, 27px);
 }
 
 @mixin body-level-2 {
-	@include font-rem(12px, 20px);
+	@include fonts.font-rem(12px, 20px);
 }
 
 @mixin body-level-1 {
-	@include font-rem(10px, 15px);
+	@include fonts.font-rem(10px, 15px);
 }
 
 @mixin body-level-0 {
-	@include font-rem(8px, 12px);
+	@include fonts.font-rem(8px, 12px);
 }

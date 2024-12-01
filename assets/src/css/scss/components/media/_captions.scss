@@ -1,3 +1,5 @@
+@use '../../abstracts/mixins/position';
+
 // Components - Captions
 //--------------------------------------------//
 
@@ -5,8 +7,8 @@
 	margin-bottom: 1.5em;
 	max-width: 100%;
 
-	img[class*="wp-image-"] {
-		@include ctr("both");
+	img[class*='wp-image-'] {
+		@include position.ctr('both');
 	}
 
 	.wp-caption-text {

@@ -1,18 +1,24 @@
+@use '../../abstracts/mixins/fonts';
+@use '../../abstracts/mixins/media-queries';
+@use '../../abstracts/variables/colors';
+@use '../../abstracts/variables/typography';
+@use './typescale';
+
 // Typography - Copy
 //--------------------------------------------//
 
 p,
 .elementor-text-editor {
-	color: $text-secondary-colour;
-	font-family: $font__secondary;
+	color: colors.$text-secondary-colour;
+	font-family: typography.$font__secondary;
 
-	@include body-level-4;
+	@include typescale.body-level-4;
 	font-weight: 300;
 	letter-spacing: 0;
 	padding-bottom: 0;
 
-	@include r(md) {
-		@include heading-level-3;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-3;
 	}
 
 	strong {
@@ -23,7 +29,7 @@ p,
 .light-copy {
 	.elementor-text-editor,
 	p {
-		color: $text-inverse-colour;
+		color: colors.$text-inverse-colour;
 	}
 }
 
@@ -40,15 +46,15 @@ p {
 }
 
 li {
-	color: $text-secondary-colour;
-	font-family: $font__secondary;
+	color: colors.$text-secondary-colour;
+	font-family: typography.$font__secondary;
 
-	@include body-level-4;
+	@include typescale.body-level-4;
 	font-weight: 300;
 	letter-spacing: 0;
 
-	@include r(md) {
-		@include heading-level-3;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-3;
 	}
 
 	strong {
@@ -57,15 +63,15 @@ li {
 }
 
 a {
-	color: $text-link-colour;
-	font-family: $font__secondary;
+	color: colors.$text-link-colour;
+	font-family: typography.$font__secondary;
 
-	@include body-level-4;
+	@include typescale.body-level-4;
 	font-weight: 300;
 	letter-spacing: 0;
 
-	@include r(md) {
-		@include heading-level-3;
+	@include media-queries.r(md) {
+		@include typescale.heading-level-3;
 	}
 
 	strong {
@@ -74,23 +80,23 @@ a {
 }
 
 blockquote {
-	border-left: 3px solid $brand-prim-colour;
+	border-left: 3px solid colors.$brand-prim-colour;
 	padding: 8px 32px;
 	margin-bottom: 32px;
 
-	@include r(md) {
+	@include media-queries.r(md) {
 		padding: 16px 40px;
 	}
 
 	p {
-		color: $text-primary-colour;
+		color: colors.$text-primary-colour;
 
-		@include font-rem(20px, 28px);
+		@include fonts.font-rem(20px, 28px);
 		font-style: italic;
 		margin: 0;
 
-		@include r(md) {
-			@include font-rem(24px, 32px);
+		@include media-queries.r(md) {
+			@include fonts.font-rem(24px, 32px);
 		}
 	}
 }

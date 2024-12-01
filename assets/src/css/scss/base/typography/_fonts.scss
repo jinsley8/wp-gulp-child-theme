@@ -1,18 +1,20 @@
+@use '../../abstracts/mixins/fonts';
+
 // Typography - Fonts
 //--------------------------------------------//
 
 /* space-grotesk-600 - latin */
-@include font-face(
-	"Space Grotesk",
-	"/wp-content/themes/wp-gulp-child-theme/assets/dist/fonts/space-grotesk-v1-latin-600",
+@include fonts.font-face(
+	'Space Grotesk',
+	'/wp-content/themes/wp-gulp-child-theme/assets/dist/fonts/space-grotesk-v1-latin-600',
 	600,
 	normal
 );
 
 /* open-sans-300 - latin */
-@include font-face(
-	"Open Sans",
-	"/wp-content/themes/wp-gulp-child-theme/assets/dist/fonts/open-sans-v18-latin-300",
+@include fonts.font-face(
+	'Open Sans',
+	'/wp-content/themes/wp-gulp-child-theme/assets/dist/fonts/open-sans-v18-latin-300',
 	300,
 	normal
 );

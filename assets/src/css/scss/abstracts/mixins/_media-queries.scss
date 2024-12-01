@@ -40,7 +40,7 @@
  * ------------------------------------------------------------------------- */
 
 @mixin r($device) {
-	@if $device == "ipad-pro" {
+	@if $device == 'ipad-pro' {
 		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
 			@content;
 		}
@@ -56,19 +56,19 @@
 }
 
 @mixin r($size) {
-	@if $size == "sm" {
+	@if $size == 'sm' {
 		@media screen and (max-width: 480px) {
 			@content;
 		}
-	} @else if $size == "md" {
+	} @else if $size == 'md' {
 		@media screen and (max-width: 768px) {
 			@content;
 		}
-	} @else if $size == "lg" {
+	} @else if $size == 'lg' {
 		@media screen and (max-width: 991px) {
 			@content;
 		}
-	} @else if $size == "xl" {
+	} @else if $size == 'xl' {
 		@media screen and (max-width: 1200px) {
 			@content;
 		}

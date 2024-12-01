@@ -1,8 +1,10 @@
+@use '../../abstracts/variables/colors';
+
 // Elements - Horizontal Line
 //--------------------------------------------//
 
 hr {
-	background-color: $border-1-colour;
+	background-color: colors.$border-1-colour;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;

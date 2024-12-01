@@ -1,17 +1,20 @@
+@use 'sass:color';
+@use '../../abstracts/variables/colors';
+
 // Elements - Links
 //--------------------------------------------//
 
 a {
-	color: $text-link-colour;
+	color: colors.$text-link-colour;
 
 	&:visited {
-		color: $text-primary-colour;
+		color: colors.$text-primary-colour;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: darken($text-link-colour, 10%);
+		color: color.adjust(colors.$text-link-colour, $lightness: -10%);
 	}
 
 	&:focus {

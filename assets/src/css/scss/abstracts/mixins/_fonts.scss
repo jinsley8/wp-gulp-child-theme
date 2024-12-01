@@ -1,3 +1,5 @@
+@use 'sass:string';
+
 // Font Mixins
 //--------------------------------------------//
 
@@ -6,12 +8,13 @@
 
 @mixin font-face($font-name, $path, $weight: 400, $style: normal) {
 	@font-face {
-		font-family: quote($font-name);
+		font-family: string.quote($font-name);
 		font-style: $style;
 		font-weight: $weight;
 		font-display: swap;
-		src: url($path + ".woff2?v=3.15") format("woff2"),
-			url($path + ".woff?v=3.15") format("woff");
+		src:
+			url($path + '.woff2?v=3.15') format('woff2'),
+			url($path + '.woff?v=3.15') format('woff');
 	}
 }
 

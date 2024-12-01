@@ -1,16 +1,18 @@
+@use '../abstracts/variables/theme';
+
 /*!
 
-Theme Name: #{ $theme_name }
-Theme URI: #{ $theme_uri }
-Description: #{ $theme_description }
-Author: #{ $theme_author }
-Author URI: #{ $theme_author_uri }
-GitHub Theme URI: #{ $github_theme_uri }
-Template: #{ $theme_template }
-Version: #{ $theme_version }
-License: #{ $license }
-License URI: #{ $license_uri }
-Text Domain: #{ $text_domain }
-Tags: #{ $tags }
+Theme Name: #{ theme.$theme_name }
+Theme URI: #{ theme.$theme_uri }
+Description: #{ theme.$theme_description }
+Author: #{ theme.$theme_author }
+Author URI: #{ theme.$theme_author_uri }
+GitHub Theme URI: #{ theme.$github_theme_uri }
+Template: #{ theme.$theme_template }
+Version: #{ theme.$theme_version }
+License: #{ theme.$license }
+License URI: #{ theme.$license_uri }
+Text Domain: #{ theme.$text_domain }
+Tags: #{ theme.$tags }
 
 */

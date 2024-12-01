@@ -1,22 +1,24 @@
+@use '../abstracts/mixins/media-queries';
+
 // Pages - Standard Page
 //--------------------------------------------//
 
 .elementor-section.elementor-section-boxed {
 	> .elementor-container {
-		@include r(md) {
+		@include media-queries.r(md) {
 			padding: 0 16px;
 		}
 
-		@include r(xl) {
+		@include media-queries.r(xl) {
 			padding: 0 32px;
 		}
 
 		.elementor-container {
-			@include r(md) {
+			@include media-queries.r(md) {
 				padding: 0;
 			}
 
-			@include r(xl) {
+			@include media-queries.r(xl) {
 				padding: 0;
 			}
 		}

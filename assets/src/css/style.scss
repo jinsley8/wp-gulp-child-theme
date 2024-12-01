@@ -1,51 +1,51 @@
 // Import variables and theme info.
-@import "scss/abstracts/variables/theme";
-@import "scss/theme/theme_info";
+@use 'scss/abstracts/variables/theme';
+@use 'scss/theme/theme_info';
 
 // Import variables and mixins.
-@import "scss/abstracts/mixins/fonts";
-@import "scss/abstracts/mixins/appearance";
-@import "scss/abstracts/mixins/position";
-@import "scss/abstracts/mixins/media-queries";
-@import "scss/abstracts/functions";
-@import "scss/abstracts/variables/colors";
-@import "scss/abstracts/variables/typography";
+@use 'scss/abstracts/mixins/fonts';
+@use 'scss/abstracts/mixins/appearance';
+@use 'scss/abstracts/mixins/position';
+@use 'scss/abstracts/mixins/media-queries';
+@use 'scss/abstracts/functions';
+@use 'scss/abstracts/variables/colors';
+@use 'scss/abstracts/variables/typography';
 
 // Accessibility
-@import "scss/utilities/accessibility";
+@use 'scss/utilities/accessibility';
 
 // Alignments
-@import "scss/utilities/alignments";
+@use 'scss/utilities/alignments';
 
 // Base
-@import "scss/base/typography/typescale";
-@import "scss/base/elements/body";
-@import "scss/base/elements/buttons";
-@import "scss/base/elements/fields";
-@import "scss/base/elements/hr";
-@import "scss/base/elements/links";
-@import "scss/base/elements/lists";
-@import "scss/base/elements/media";
-@import "scss/base/typography/fonts";
-@import "scss/base/typography/headings";
-@import "scss/base/typography/copy";
-@import "scss/base/typography/typography";
+@use 'scss/base/typography/typescale';
+@use 'scss/base/elements/body';
+@use 'scss/base/elements/buttons';
+@use 'scss/base/elements/fields';
+@use 'scss/base/elements/hr';
+@use 'scss/base/elements/links';
+@use 'scss/base/elements/lists';
+@use 'scss/base/elements/media';
+@use 'scss/base/typography/fonts' as fonts2;
+@use 'scss/base/typography/headings';
+@use 'scss/base/typography/copy';
+@use 'scss/base/typography/typography' as typography2;
 
 // Components
-@import "scss/components/content/forms";
-@import "scss/components/content/posts-and-pages";
-@import "scss/components/media/captions";
-@import "scss/components/media/media";
-@import "scss/components/navigation/main-navigation";
-@import "scss/components/navigation/mobile-menu";
-@import "scss/components/widgets/widgets";
+@use 'scss/components/content/forms';
+@use 'scss/components/content/posts-and-pages';
+@use 'scss/components/media/captions';
+@use 'scss/components/media/media' as media2;
+@use 'scss/components/navigation/main-navigation';
+@use 'scss/components/navigation/mobile-menu';
+@use 'scss/components/widgets/widgets';
 
 // Layouts
-@import "scss/layout/header";
-@import "scss/layout/footer";
+@use 'scss/layout/header';
+@use 'scss/layout/footer';
 
 // Pages
-@import "scss/pages/standard";
-@import "scss/pages/single";
-@import "scss/pages/home";
-@import "scss/pages/404";
+@use 'scss/pages/standard';
+@use 'scss/pages/single';
+@use 'scss/pages/home';
+@use 'scss/pages/404' as page404;
