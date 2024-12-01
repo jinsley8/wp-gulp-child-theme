@@ -1,94 +1,108 @@
 /**
- * WPGulp Configuration File
- *
- * 1. Edit the variables as per your project requirements.
- * 2. In paths you can add <<glob or array of globs>>.
- *
- * @package
+ * Gulp Configuration File
  */
 
-// Project options.
-
-// Local project URL of your already running WordPress site.
-// Could be something like "wp-gulp-child-theme.local" or "localhost"
-// depending upon your local WordPress setup.
-const projectURL = 'https://wp-gulp-child-theme.local';
-
-// Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
-const productURL = './';
-const browserAutoOpen = false;
-const injectChanges = true;
-
-// >>>>> Style options.
-// Path to main .scss file.
-const styleSRC = './assets/src/css/style.scss';
-
-// Path to place the compiled CSS file. Default set to root folder.
-const styleDestination = './';
-
-// Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
-const outputStyle = 'expanded';
-const outputStyleMin = 'compressed';
-
-// JS Vendor options.
-// Path to JS vendor folder.
-const jsVendorSRC = './assets/src/js/vendor/**/*.js';
-// Path to place the compiled JS vendors file.
-const jsVendorDestination = './assets/dist/js/vendor/';
-
-// JS Custom options.
-// Path to JS custom scripts folder.
-const jsCustomSRC = './assets/src/js/custom/**/*.js';
-// Path to place the compiled JS custom scripts file.
-const jsCustomDestination = './assets/dist/js/custom/';
-
-// Images options.
-// Source folder of images which should be optimized and watched.
-// > You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
-const imgSRC = './assets/src/img/raw/**/*';
-
-// Destination folder of optimized images.
-// > Must be different from the imagesSRC folder.
-const imgDST = './assets/dist/img/';
-
-// >>>>> Watch files paths.
-// Path to all *.scss files inside css folder and inside them.
-const watchStyles = './assets/src/css/**/*.scss';
-
-// Path to all vendor JS files.
-const watchJsVendor = './assets/src/js/vendor/*.js';
-
-// Path to all custom JS files.
-const watchJsCustom = './assets/src/js/custom/*.js';
-
-// Path to all PHP files.
-const watchPhp = './**/*.php';
-
-// Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
-// The following list is set as per WordPress requirements. Though; Feel free to change.
-const BROWSERS_LIST = ['last 2 version', '> 1%'];
-
-// Export.
-const config = {
-	projectURL,
-	productURL,
-	browserAutoOpen,
-	injectChanges,
-	styleSRC,
-	styleDestination,
-	outputStyle,
-	outputStyleMin,
-	jsVendorSRC,
-	jsVendorDestination,
-	jsCustomSRC,
-	jsCustomDestination,
-	imgSRC,
-	imgDST,
-	watchStyles,
-	watchJsVendor,
-	watchJsCustom,
-	watchPhp,
-	BROWSERS_LIST,
+const PATHS = {
+	styles: {
+		src: './assets/src/css/style.scss',
+		dest: './',
+		watch: './assets/src/css/**/*.scss',
+	},
+	scripts: {
+		vendor: {
+			src: './assets/src/js/vendor/**/*.js',
+			dest: './assets/dist/js/vendor/',
+			watch: './assets/src/js/vendor/*.js',
+		},
+		custom: {
+			src: './assets/src/js/custom/**/*.js',
+			dest: './assets/dist/js/custom/',
+			watch: './assets/src/js/custom/*.js',
+		},
+	},
+	images: {
+		src: './assets/src/img/raw/**/*',
+		dest: './assets/dist/img/',
+	},
+	php: {
+		watch: './**/*.php',
+	},
 };
 
-export default config;
+const OPTIONS = {
+	project: {
+		url: 'https://wp-gulp-child-theme.local',
+		browserAutoOpen: false,
+		injectChanges: true,
+	},
+	styles: {
+		sass: {
+			expanded: { outputStyle: 'expanded' },
+			compressed: { outputStyle: 'compressed' },
+		},
+		autoprefixer: {
+			browsers: ['last 2 version', '> 1%'],
+		},
+		cleanCSS: {
+			compatibility: '*',
+			level: {
+				1: {
+					specialComments: 'all',
+					removeEmpty: true,
+					removeWhitespace: true,
+				},
+				2: {
+					mergeMedia: true,
+					removeEmpty: true,
+					removeDuplicateFontRules: true,
+					removeDuplicateMediaBlocks: true,
+					removeDuplicateRules: true,
+					removeUnusedAtRules: false,
+				},
+			},
+		},
+	},
+	scripts: {
+		babel: {
+			presets: [
+				[
+					'@babel/preset-env',
+					{
+						targets: { browsers: ['last 2 version', '> 1%'] },
+					},
+				],
+			],
+		},
+		uglify: {
+			compress: {
+				sequences: true,
+				dead_code: true,
+				conditionals: true,
+				booleans: true,
+				unused: true,
+				if_return: true,
+				join_vars: true,
+				drop_console: false,
+			},
+		},
+	},
+	imagemin: {
+		gifsicle: { interlaced: true },
+		mozjpeg: { quality: 75, progressive: true },
+		optipng: { optimizationLevel: 4 },
+		svgo: {
+			plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+		},
+	},
+	browserSync: {
+		watchOptions: {
+			ignored: ['node_modules/**', '*.txt'],
+			ignoreInitial: true,
+		},
+		snippetOptions: {
+			ignorePaths: ['wp-admin/**'],
+		},
+	},
+};
+
+export { PATHS, OPTIONS };
