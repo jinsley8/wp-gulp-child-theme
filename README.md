@@ -28,7 +28,7 @@ Download pre-built packages from the [Node.js](https://nodejs.org/en/) website f
 
 ## Optional: Install Bun
 
-[Bun](https://bun.sh/docs/installation#installing) can be used as the package manager in replacement of npm to install packages up to 30x faster. [Bun](https://bun.sh/docs/installation#installing) can be installed via curl, npm, or homebrew:
+[Bun](https://bun.sh/docs/installation#installing) can be used as the package manager in replacement of npm to install packages up to 30x faster. [Bun](https://bun.sh/docs/installation#installing) can be installed via homebrew, npm, or curl.
 
 ## Getting Started
 
